@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt=BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ <!DOCTYPE html>
+<html>
+<head>
+    <title>ACESSO CONFIDENCIAL</title>
+    <style>
+        body {
+            background-color: black;
+            color: #00ff99;
+            font-family: "Courier New", monospace;
+            text-align: center;
+            padding-top: 100px;
+        }
+
+        #terminal {
+            font-size: 20px;
+            white-space: pre-line;
+        }
+
+        button {
+            background-color: black;
+            color: #00ff99;
+            border: 2px solid #00ff99;
+            padding: 10px 25px;
+            font-size: 18px;
+            margin: 20px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #00ff99;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+<div id="terminal"></div>
+<div id="pedido" style="display:none;">
+    <h2 style="color:#ff4da6;">Pietra ❤️</h2>
+    <h3>Você aceita namorar comigo?</h3>
+    <button onclick="sim()">ACEITAR 💍</button>
+    <button onclick="nao()">NEGAR ❌</button>
+</div>
+
+<script>
+    const texto = [
+        "Iniciando sistema...",
+        "Conectando ao coração da Pietra...",
+        "Ignorando firewall da timidez...",
+        "Invadindo sentimentos...",
+        "Acesso concedido ❤️",
+        "",
+        "Mensagem secreta encontrada:",
+        "",
+        "Eu gosto muito de você.",
+        "E queria saber...",
+    ];
+
+    let i = 0;
+    const terminal = document.getElementById("terminal");
+
+    function escrever() {
+        if (i < texto.length) {
+            terminal.innerHTML += texto[i] + "\n";
+            i++;
+            setTimeout(escrever, 800);
+        } else {
+            document.getElementById("pedido").style.display = "block";
+        }
+    }
+
+    function sim() {
+        alert("ACESSO PERMANENTE AO CORAÇÃO CONCEDIDO ❤️💍");
+    }
+
+    function nao() {
+        alert("Erro 404: Resposta incorreta 😌 Você não tem direito a essa opção.");
+    }
+
+    escrever();
+</script>
+
+</body>
+</html>
